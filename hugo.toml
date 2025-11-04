@@ -24,13 +24,13 @@ theme = "hugo-theme-anubis-main"
   rssAsSocialIcon = true # Добавить иконку RSS в соц.сети
   
   # Настройки социальных сетей
-  [params.social]
-  [[params.social]]
-    id = "github"
-    name = "danyakr" # Это сгенерирует ссылку на ваш профиль GitHub
-  [[params.social]]
-    id = "telegram"
-    name = "ВашТелеграм" # Пример
+[params.social]
+[[params.social]]
+  id = "github"
+  name = "danyakr" # Это сгенерирует ссылку на ваш профиль GitHub
+[[params.social]]
+  id = "telegram"
+  name = "ВашТелеграм" # Пример
 
 [menu]
   [[menu.main]]
