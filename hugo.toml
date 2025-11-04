@@ -1,7 +1,8 @@
-baseURL = "https://example.com/portfolio_k"
-languageCode = "en-us"
-title = "Some Title"
-theme = "hugo-theme-anubis-main"
+baseURL = "https://danyakr.github.io/portfolio_k/" # ВНИМАНИЕ! Исправленный адрес для GitHub Pages
+languageCode = "ru-ru" # Русский язык
+title = "Портфолио Данила"
+theme = "hugo-theme-anubis-main" # Убедитесь, что это имя папки
+paginate = 10 # Отображение 10 элементов на странице
 
 [taxonomies]
   tag = "tags"
@@ -11,77 +12,63 @@ theme = "hugo-theme-anubis-main"
   post = "/:filename/"
 
 [params]
-  author = "Данил"
-  description = "Мое новое портфолио, созданное на Hugo с темой Anubis."
-  email = "Ваш_email@example.com" # Используется для микроформатов
+  author = "Данил" # Ваше имя
+  description = "Мое портфолио на Hugo с темой Anubis."
+  email = "Ваш_email@example.org" # ВНИМАНИЕ! Замените на свой email
   avatar = "/images/avatar.jpg" # Добавьте свое фото в static/images/
   
+  # Параметры из Anubis
   dateFormat = "2006-01-02"
-  style = "auto" # Автоматический светлый/темный режим
-  mainSections = [ "posts" ] # На главной странице будут отображаться посты
-  toc = true # Включить оглавление
+  paginationSinglePost = true
+  style = "auto" # Автоматический темный/светлый режим с переключателем
+  readMore = false
+  readNextPosts = 5 # Показывать 5 похожих постов
   copyCodeButton = true
-  rssAsSocialIcon = true # Добавить иконку RSS в соц.сети
+  rssAsSocialIcon = true
+  mathjax = false
   
-  # Настройки социальных сетей
+  # Установите ваши основные разделы контента
+  mainSections = [ "posts", "kurs", "practices" ] 
+
+# --- Секция социальных сетей (ОБЯЗАТЕЛЬНО: ДВОЙНЫЕ СКОБКИ, ОТДЕЛЬНО ОТ [params]) ---
+
 [[params.social]]
   id = "github"
-  name = "danyakr" # Это сгенерирует ссылку на ваш профиль GitHub
+  name = "danyakr" 
+
 [[params.social]]
   id = "telegram"
-  name = "ВашТелеграм" # Пример
+  name = "ВашТелеграм" # ВНИМАНИЕ! Замените на ваш логин Telegram
+
+# --- Настройки меню (ОБЯЗАТЕЛЬНО: [[menu.main]]) ---
 
 [menu]
   [[menu.main]]
   name = "Главная"
   url = "/"
   weight = 1
+  
   [[menu.main]]
   name = "Архив"
-  url = "/posts/" # Ссылка на все посты
+  url = "/posts/" 
   weight = 2
+  
   [[menu.main]]
   name = "Обо мне"
-  url = "/about/" # Убедитесь, что у вас есть файл content/about.md
+  url = "/about/" 
   weight = 3
+
+  [[menu.main]]
+  name = "Курсовые работы"
+  url = "/kurs/" 
+  weight = 4
   
-# [menu]  
-#   [[menu.nav]]
-#   name = "Home"
-#   url = "/home/"
-#   weight = 1
-#   [[menu.nav]]
-#   name = "Posts"
-#   url = "/"
-#   weight = 2
-#   [[menu.nav]]
-#   name = "About"
-#   url = "/about/"
-#   weight = 3  
-#   [[menu.nav]]
-#   name = "1"
-#   url = "/1/"
-#   weight = 4
-#   [[menu.nav]]
-#   name = "2"
-#   url = "/2/"
-#   weight = 5
-#   [[menu.nav]]
-#   name = "3"
-#   url = "/3/"
-#   weight = 6
-#   [[menu.nav]]
-#   name = "4"
-#   url = "/4/"
-#   weight = 7
-#   [[menu.nav]]
-#   name = "Практики"
-#   url = "/practices/"
-#   weight = 8
-#   [[menu.nav]]
-#   name = "Курсовые работы"
-#   url = "/kurs/"
-#   weight = 9
+  [[menu.main]]
+  name = "Практики"
+  url = "/practices/" 
+  weight = 5
+
+# --- Настройки Markdown/HTML ---
 
 [markup]
   defaultMarkdownHandler = "goldmark"
@@ -99,7 +86,7 @@ theme = "hugo-theme-anubis-main"
       autoHeadingID = true
     [markup.goldmark.renderer]
       hardWraps = false
-      unsafe = true
+      unsafe = true # Разрешение HTML/стилей Anubis
       xHTML = false
   [markup.highlight]
     codeFences = true
