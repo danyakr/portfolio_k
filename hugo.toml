@@ -11,63 +11,78 @@ theme = "hugo-theme-anubis-main"
   post = "/:filename/"
 
 [params]
-  description = "Some description"
-  contentBackgroundColor = "#fff"
-  contentTextColor = "#212529"
-  contentLinkColor = "#007bff"
-  contentLinkHoverColor = "#0056b3"
-  navbarBackgroundColor = "#212529"
-  navbarLinkColor = "rgba(255, 255, 255, 0.75)"
-  navbarLinkHoverColor = "rgba(255, 255, 255, 1)"
-  wrapperMaxWidth = "800px"
-  customDateFormat = "Jan 2, 2006"
-  customCodeStyle = true
-  customBlockquoteStyle = true
-  showPostSummary = false
-  googleAnalytics = "UA-123456789-1"
-  cookieConsent = true
-  includeBootstrapJs = false
-  faviconSafariPinnedTabColor = "#5bbad5"
-  faviconMsApplicationTileColor = "#da532c"
-  faviconThemeColor = "#ffffff"
+  author = "Данил"
+  description = "Мое новое портфолио, созданное на Hugo с темой Anubis."
+  email = "Ваш_email@example.com" # Используется для микроформатов
+  avatar = "/images/avatar.jpg" # Добавьте свое фото в static/images/
+  
+  dateFormat = "2006-01-02"
+  style = "auto" # Автоматический светлый/темный режим
+  mainSections = [ "posts" ] # На главной странице будут отображаться посты
+  toc = true # Включить оглавление
+  copyCodeButton = true
+  rssAsSocialIcon = true # Добавить иконку RSS в соц.сети
+  
+  # Настройки социальных сетей
+  [params.social]
+  [[params.social]]
+    id = "github"
+    name = "danyakr" # Это сгенерирует ссылку на ваш профиль GitHub
+  [[params.social]]
+    id = "telegram"
+    name = "ВашТелеграм" # Пример
 
 [menu]
-  [[menu.nav]]
-  name = "Home"
-  url = "/home/"
-  weight = 1
-  [[menu.nav]]
-  name = "Posts"
+  [[menu.main]]
+  name = "Главная"
   url = "/"
+  weight = 1
+  [[menu.main]]
+  name = "Архив"
+  url = "/posts/" # Ссылка на все посты
   weight = 2
-  [[menu.nav]]
-  name = "About"
-  url = "/about/"
-  weight = 3  
-  [[menu.nav]]
-  name = "1"
-  url = "/1/"
-  weight = 4
-  [[menu.nav]]
-  name = "2"
-  url = "/2/"
-  weight = 5
-  [[menu.nav]]
-  name = "3"
-  url = "/3/"
-  weight = 6
-  [[menu.nav]]
-  name = "4"
-  url = "/4/"
-  weight = 7
-  [[menu.nav]]
-  name = "Практики"
-  url = "/practices/"
-  weight = 8
-  [[menu.nav]]
-  name = "Курсовые работы"
-  url = "/kurs/"
-  weight = 9
+  [[menu.main]]
+  name = "Обо мне"
+  url = "/about/" # Убедитесь, что у вас есть файл content/about.md
+  weight = 3
+  
+# [menu]  
+#   [[menu.nav]]
+#   name = "Home"
+#   url = "/home/"
+#   weight = 1
+#   [[menu.nav]]
+#   name = "Posts"
+#   url = "/"
+#   weight = 2
+#   [[menu.nav]]
+#   name = "About"
+#   url = "/about/"
+#   weight = 3  
+#   [[menu.nav]]
+#   name = "1"
+#   url = "/1/"
+#   weight = 4
+#   [[menu.nav]]
+#   name = "2"
+#   url = "/2/"
+#   weight = 5
+#   [[menu.nav]]
+#   name = "3"
+#   url = "/3/"
+#   weight = 6
+#   [[menu.nav]]
+#   name = "4"
+#   url = "/4/"
+#   weight = 7
+#   [[menu.nav]]
+#   name = "Практики"
+#   url = "/practices/"
+#   weight = 8
+#   [[menu.nav]]
+#   name = "Курсовые работы"
+#   url = "/kurs/"
+#   weight = 9
 
 [markup]
   defaultMarkdownHandler = "goldmark"
